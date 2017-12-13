@@ -42,9 +42,9 @@
 //参数
 @property (strong, nonatomic) NSMutableArray *selectArray;//选中的时间段
 @property (strong, nonatomic) NSMutableArray *addressArray;//地址
-@property (strong, nonatomic) NSMutableArray *subjectArray;//科目
+@property (strong, nonatomic) NSMutableArray *subjectArray;//课程
 @property (strong, nonatomic) NSString *addressId;//地址id
-@property (strong, nonatomic) NSString *subjectId;//科目id
+@property (strong, nonatomic) NSString *subjectId;//课程id
 
 @property (strong, nonatomic) NSString *selectPickerTag;//选中的标记
 
@@ -57,7 +57,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *experienceClass;
 @end
 @implementation ScheduleSettingViewController{
-    //选中的科目
+    //选中的课程
     NSInteger index;
 }
 
@@ -137,12 +137,12 @@
     if (_bai2 == _hei2) {
        price  = [NSString stringWithFormat:@"%.2f",self.bai2];
     }else {
-        price = [NSString stringWithFormat:@"白天%.2f一个小时,夜里%.2f一个小时",_bai2,_hei2];
+        price = [NSString stringWithFormat:@"白天%.2f一个鞍时,夜里%.2f一个鞍时",_bai2,_hei2];
     }
     //地址
     self.addressTextField.text = @"暂无数据";
     //教学内容
-    self.contentTextField.text = @"科目二";
+    self.contentTextField.text = @"初级课程";
     index = 0;
     //价格
     self.priceTextField.text = price;
@@ -275,7 +275,7 @@
     
     for (int i= 0; i< 2; i++) {
         NSMutableDictionary *dataDic = [NSMutableDictionary dictionary];
-        NSArray *nameArray = @[@"科目二", @"科目三"];
+        NSArray *nameArray = @[@"初级课程", @"中级课程"];
         NSArray *idArray = @[@"0", @"1"];
         [dataDic setObject:nameArray[i] forKey:@"name"];
         [dataDic setObject:idArray[i] forKey:@"id"];
@@ -305,23 +305,23 @@
     NSString *price;
     //价格
    
-   //如果是科目二
+   //如果是初级课程
     if (index == 0) {
         //教学内容
-        self.contentTextField.text = @"科目二";
+        self.contentTextField.text = @"初级课程";
         if (_bai2 == _hei2) {
             price  = [NSString stringWithFormat:@"%.2f",self.bai2];
         }else {
-            price = [NSString stringWithFormat:@"白天%.2f一个小时,夜里%.2f一个小时",_bai2,_hei2];
+            price = [NSString stringWithFormat:@"白天%.2f一个鞍时,夜里%.2f一个鞍时",_bai2,_hei2];
         }
         //价格
         self.priceTextField.text = price;
-    }else {//否者就是科目三
-        self.contentTextField.text = @"科目三";
+    }else {//否者就是中级课程
+        self.contentTextField.text = @"中级课程";
         if (_bai3 == _hei3) {
             price  = [NSString stringWithFormat:@"%.2f",self.bai3];
         }else {
-            price = [NSString stringWithFormat:@"白天%.2f一个小时,夜里%.2f一个小时",_bai3,_hei3];
+            price = [NSString stringWithFormat:@"白天%.2f一个鞍时,夜里%.2f一个鞍时",_bai3,_hei3];
         }
         //价格
         self.priceTextField.text = price;

@@ -86,9 +86,9 @@
                     _timeLabel.textColor = [UIColor whiteColor];
                     _SubjectName.text = nil;
                     if (model.subType== 2) {
-                    _SubjectName.text = @"科目二";
+                    _SubjectName.text = @"初级课程";
                     }else {
-                    _SubjectName.text = @"科目三";
+                    _SubjectName.text = @"中级课程";
                     }
                     _SubjectName.textColor = [UIColor whiteColor];
                     _priceLabel.numberOfLines = 0;

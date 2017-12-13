@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 daoshun. All rights reserved.
 //
 
-#import "GreyTopViewController.h"  //准驾类型
+#import "GreyTopViewController.h"  //准教类型
 
 @interface CarModelViewController : GreyTopViewController
 

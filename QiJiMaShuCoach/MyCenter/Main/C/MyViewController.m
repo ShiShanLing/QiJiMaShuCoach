@@ -220,15 +220,15 @@
         }
         
         self.phoneLabel.text = phone;
-        [self.trainTimeButton setTitle:[NSString stringWithFormat:@"   已累计培训%@学时",totalTime] forState:UIControlStateNormal];
+        [self.trainTimeButton setTitle:[NSString stringWithFormat:@"   已累计培训%@鞍时",totalTime] forState:UIControlStateNormal];
 
         self.cashLabel.text = [NSString stringWithFormat:@"%@",money];
         
-        //学马券时间
+        //优惠券时间
         int couponhour = [userInfo[@"couponhour"] intValue];
          self.xiaobaTicketLabel.text = [NSString stringWithFormat:@"%d",couponhour];
         
-        //学马币个数
+        //积分个数
         NSString *coinnum = [userInfo[@"coinnum"] description];
         self.xiaobaCoinLabel.text = coinnum;
         
@@ -361,7 +361,7 @@
 - (IBAction)closeRuleView:(id)sender {
     [self.coinRuleView removeFromSuperview];
 }
-// 查看学马币/券规则
+// 查看积分/优惠券规则
 - (IBAction)clickForCoinRuleView:(id)sender {
     
     
@@ -443,12 +443,12 @@
     self.alertMoneyLabel.text = [NSString stringWithFormat:@"%@元", money];
     [self.alertMoneyLabel.superview  bringSubviewToFront:self.alertMoneyLabel];
 }
-// 兑换学马券
+// 兑换优惠券
 - (IBAction)clickForConvertTicket:(id)sender {
     MyTicketDetailViewController *nextController = [[MyTicketDetailViewController alloc] initWithNibName:@"MyTicketDetailViewController" bundle:nil];
     [self.navigationController pushViewController:nextController animated:YES];
 }
-//查看学马币详情
+//查看积分详情
 - (IBAction)clickForCoinDetail:(id)sender {
     ConvertCoinViewController *nextController = [[ConvertCoinViewController alloc] initWithNibName:@"ConvertCoinViewController" bundle:nil];
     [self.navigationController pushViewController:nextController animated:YES];
@@ -462,7 +462,7 @@
     AmountDetailViewController *nextController = [[AmountDetailViewController alloc] initWithNibName:@"AmountDetailViewController" bundle:nil];
     [self.navigationController pushViewController:nextController animated:YES];
 }
-//查看学马券明细
+//查看优惠券明细
 - (IBAction)lookTicketDetail:(id)sender {
     
 }
@@ -571,10 +571,10 @@
     SetAddrViewController *targetViewController = [[SetAddrViewController alloc] initWithNibName:@"SetAddrViewController" bundle:nil];
     [self.navigationController pushViewController:targetViewController animated:YES];
 }
-//发放学车券
+//发放优惠券
 - (IBAction)clickForSendCoupon:(id)sender {
-    CouponNavigateViewController *targetViewController = [[CouponNavigateViewController alloc] initWithNibName:@"CouponNavigateViewController" bundle:nil];
-    [self.navigationController pushViewController:targetViewController animated:YES];
+//    CouponNavigateViewController *targetViewController = [[CouponNavigateViewController alloc] initWithNibName:@"CouponNavigateViewController" bundle:nil];
+//    [self.navigationController pushViewController:targetViewController animated:YES];
 }
 //在线客服
 - (IBAction)clickForOnlineServe:(id)sender {
@@ -851,7 +851,7 @@
         self.mainScrollView.userInteractionEnabled=YES;
         
         //http://www.jxchezhilian.com/img/upload/img/avatar/1510193524723.png
-        NSString  *url_Str = [NSString stringWithFormat:@"%@/img%@",kURL_SHY, model.avatar];
+        NSString  *url_Str = [NSString stringWithFormat:@"%@/img%@",kURL_Image, model.avatar];
         
         //头像
         [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:url_Str] placeholderImage:[UIImage imageNamed:@"icon_portrait_default"] options:SDWebImageProgressiveDownload];
@@ -862,14 +862,14 @@
             self.nameLabel.text = name;
         }
         self.phoneLabel.text = phone;
-        [self.trainTimeButton setTitle:[NSString stringWithFormat:@" 已累计培训%@学时",totalTime] forState:UIControlStateNormal];
+        [self.trainTimeButton setTitle:[NSString stringWithFormat:@" 已累计培训%@鞍时",totalTime] forState:UIControlStateNormal];
         NSString *money = [NSString stringWithFormat:@"%.2f", model.balance];//余额
         NSLog(@"CoachAuditStatusModel%.2f", model.balance);
         self.cashLabel.text = [NSString stringWithFormat:@"%@",money];
-        //学马券时间
+        //优惠券时间
         int couponhour = 12;
         self.xiaobaTicketLabel.text = [NSString stringWithFormat:@"%d",couponhour];
-        //学马币个数
+        //优惠券个数
         NSString *coinnum = @"10";
         self.xiaobaCoinLabel.text = coinnum;
         float score = 4.5;

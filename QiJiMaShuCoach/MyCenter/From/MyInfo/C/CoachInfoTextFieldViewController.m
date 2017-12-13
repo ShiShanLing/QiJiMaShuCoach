@@ -38,7 +38,7 @@
         }
         self.inputTextfield.keyboardType = UIKeyboardTypeDefault;
     }else if ([self.viewType intValue] == 2){
-        self.titleLabel.text = @"驾培教龄";
+        self.titleLabel.text = @"教培教龄";
         self.inputTextfield.placeholder = @"请输入真实骑培教龄";
         if (self.textString.length>0) {
             self.inputTextfield.text = self.textString;

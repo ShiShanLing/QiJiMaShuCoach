@@ -65,11 +65,11 @@
 //http://192.168.0.250:8080/com-zerosoft-boot-assembly-seller-local-1.0.0-SNAPSHOT/coach/api/openClass?coachId=69f5b3990b5d4c5895e444ee8a73bb05&subType=2&time=1509746400000,1509750000000,1509750000000,1509753600000
 //张玉霄
 //沈会阳  http://192.168.100.101:8080/seller
-//线上      http://www.jxchezhilian.com
+//线上      http://106.14.158.95:8081/school
 //臧鹏维  http://192.168.0.245:8080/com-zerosoft-boot-assembly-seller-local-1.0.0-SNAPSHOT
 //              http://192.168.100.101:8080/seller
-#define kURL_SHY @"http://www.jxchezhilian.com"
-
+#define kURL_SHY @"http://106.14.158.95:8081/school"
+#define kURL_Image @"http://106.14.158.95:8081/img"
 #define kCoachId  @"f3adf20a7fa64344bec4abd50f316b20"
-#define kSchoolId @"1"
+#define kSchoolId @"21865291353a4d169703e281faa72c11"
 #endif /* QiJiMaShuCoach_pch */

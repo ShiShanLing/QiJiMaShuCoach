@@ -139,7 +139,7 @@
         
     }
     
-    cell.addressLabel.text = [NSString stringWithFormat:@"历史学时:%d/%d",[learnmytime intValue],[learntime intValue]];
+    cell.addressLabel.text = [NSString stringWithFormat:@"历史鞍时:%d/%d",[learnmytime intValue],[learntime intValue]];
     
     //订单总价
     cell.priceLabel.textColor = MColor(32, 180, 120);

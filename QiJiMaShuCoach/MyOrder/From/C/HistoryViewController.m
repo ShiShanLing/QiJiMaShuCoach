@@ -221,11 +221,11 @@
     NSString *btnState;
     switch (timeModel.trainState) {
         case 0:
-            btnState = @"确认上车";
+            btnState = @"确认开始马术学习";
             cell.timeEditorBtn.backgroundColor = MColor(0, 190, 122);
             break;
         case 1:
-            btnState = @"确认下车";
+            btnState = @"确认结束马术学习";
             cell.timeEditorBtn.backgroundColor = MColor(0, 190, 122);
             break;
         case 2:

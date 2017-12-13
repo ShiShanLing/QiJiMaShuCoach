@@ -20,6 +20,7 @@
 #import "LoginViewController.h"
 #import "DatePickerViewController.h"
 #import "CoachInfoTextFieldViewController.h"
+#import "ForgotPasswordVC.h"
 @interface MyInfoViewController ()<UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate,DatePickerViewControllerDelegate> {
     CGRect _oldFrame;
     CGFloat _y;
@@ -542,7 +543,7 @@
     self.birthdayLabel.text = @"请选择";
     self.trainTimeLabel.text = model.teachAge;
     self.selfEvaluationLabel.text = model.descriptionStr;
-    [self.portraitImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/img%@",kURL_SHY,model.avatar]] placeholderImage:[UIImage imageNamed:@"ic_head_gray"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    [self.portraitImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/img%@",kURL_Image,model.avatar]] placeholderImage:[UIImage imageNamed:@"ic_head_gray"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
     }];
     int  state = [UserDataSingleton mainSingleton].approvalState.intValue;
     switch (state) {
@@ -776,7 +777,6 @@
             [model setValue:urseDataDic[key] forKey:key];
         }
         [UserDataSingleton mainSingleton].coachModel = model;
-        
         //获取应用程序沙盒的Documents目录
         NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
         NSString *plistPath1 = [paths objectAtIndex:0];
@@ -790,6 +790,14 @@
         NSMutableDictionary *userData2 = [[NSMutableDictionary alloc] initWithContentsOfFile:filename];
     }
 }
+
+- (IBAction)handleModifyLoginPassword:(id)sender {
+    
+    ForgotPasswordVC *VC = [[ForgotPasswordVC alloc] init];
+    [self.navigationController pushViewController:VC animated:YES];
+    
+}
+
 
 
 @end

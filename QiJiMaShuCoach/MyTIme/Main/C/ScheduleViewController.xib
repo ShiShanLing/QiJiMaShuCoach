@@ -133,7 +133,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="T7C-R7-m3x"/>
                             </constraints>
-                            <state key="normal" title="确认发布(科二)">
+                            <state key="normal" title="确认发布(初级)">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>

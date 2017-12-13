@@ -100,8 +100,8 @@
     
     NSString *coinFrom = [[NSString alloc]init];//学马币支付方
     NSString *coinWay = [[NSString alloc]init];//学马币方式
-    NSString *coinTime = [[NSString alloc]init];//学车币记录时间
-    NSString *coinNumStr = [[NSString alloc]init];//学车币额度
+    NSString *coinTime = [[NSString alloc]init];//学马币记录时间
+    NSString *coinNumStr = [[NSString alloc]init];//学马币额度
     
     
     NSRange range1 = NSMakeRange(5, 5);
@@ -112,7 +112,7 @@
     
     if ([receivertype intValue] == 2) {
         if ([payertype intValue] == 0) {
-            coinFrom = @"支付方：车智联平台";
+            coinFrom = @"支付方：骐骥马术平台";
         }else if ([payertype intValue] == 1){
             coinFrom = @"支付方：马场";
         }else if ([payertype intValue] == 2){
@@ -132,7 +132,7 @@
     }
 //    else if ([receivertype intValue] == 3){
 //        if ([payertype intValue] == 0) {
-//            coinFrom = @"支付方：车智联平台";
+//            coinFrom = @"支付方：骐骥学马平台";
 //        }else if ([payertype intValue] == 1){
 //            coinFrom = @"支付方：马场";
 //        }else if ([payertype intValue] == 2){

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2CD9D7BE8E99B3FE192040DD /* libPods-QiJiMaShuCoach.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EFBAACDA51B34BD9FEBD41 /* libPods-QiJiMaShuCoach.a */; };
+		A10DBD0A1FE115D300D20698 /* ForgotPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A10DBD081FE115D300D20698 /* ForgotPasswordVC.m */; };
+		A10DBD0D1FE115DC00D20698 /* PassWordLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A10DBD0C1FE115DC00D20698 /* PassWordLoginVC.m */; };
+		A10DBD101FE1169C00D20698 /* InputBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = A10DBD0F1FE1169B00D20698 /* InputBoxView.m */; };
 		A1DEB4A11FC2CDEA00F45256 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1DEB49F1FC2CDEA00F45256 /* Main.storyboard */; };
 		A1DEB4A41FC2CDEA00F45256 /* QiJiMaShuCoach.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1DEB4A21FC2CDEA00F45256 /* QiJiMaShuCoach.xcdatamodeld */; };
 		A1DEB4A61FC2CDEA00F45256 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1DEB4A51FC2CDEA00F45256 /* Assets.xcassets */; };
@@ -218,6 +221,12 @@
 
 /* Begin PBXFileReference section */
 		694E33FFED923EA924E6FCBE /* Pods-QiJiMaShuCoach.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiJiMaShuCoach.release.xcconfig"; path = "Pods/Target Support Files/Pods-QiJiMaShuCoach/Pods-QiJiMaShuCoach.release.xcconfig"; sourceTree = "<group>"; };
+		A10DBD081FE115D300D20698 /* ForgotPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordVC.m; sourceTree = "<group>"; };
+		A10DBD091FE115D300D20698 /* ForgotPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordVC.h; sourceTree = "<group>"; };
+		A10DBD0B1FE115DB00D20698 /* PassWordLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassWordLoginVC.h; sourceTree = "<group>"; };
+		A10DBD0C1FE115DC00D20698 /* PassWordLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassWordLoginVC.m; sourceTree = "<group>"; };
+		A10DBD0E1FE1169B00D20698 /* InputBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputBoxView.h; sourceTree = "<group>"; };
+		A10DBD0F1FE1169B00D20698 /* InputBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputBoxView.m; sourceTree = "<group>"; };
 		A1DEB4961FC2CDEA00F45256 /* QiJiMaShuCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiJiMaShuCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DEB4A01FC2CDEA00F45256 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1DEB4A31FC2CDEA00F45256 /* QiJiMaShuCoach.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QiJiMaShuCoach.xcdatamodel; sourceTree = "<group>"; };
@@ -600,12 +609,9 @@
 		A1DEB4981FC2CDEA00F45256 /* QiJiMaShuCoach */ = {
 			isa = PBXGroup;
 			children = (
-				A1DEB5D41FC2D26B00F45256 /* Protocol */,
 				A1DEB62A1FC2D26D00F45256 /* Public */,
-				A1DEB63D1FC2D26E00F45256 /* ThirdParty */,
 				A1DEB4CE1FC2D26900F45256 /* Category */,
 				A1DEB5D51FC2D26C00F45256 /* CustomControls */,
-				A1DEB6561FC2D27000F45256 /* Extension */,
 				A1DEB5041FC2D26B00F45256 /* MyCenter */,
 				A1DEB4D71FC2D26A00F45256 /* MyOrder */,
 				A1DEB63F1FC2D26F00F45256 /* MyTIme */,
@@ -668,8 +674,6 @@
 			isa = PBXGroup;
 			children = (
 				A1DEB4D91FC2D26A00F45256 /* C */,
-				A1DEB4E31FC2D26A00F45256 /* M */,
-				A1DEB4E41FC2D26A00F45256 /* V */,
 			);
 			path = From;
 			sourceTree = "<group>";
@@ -688,20 +692,6 @@
 				A1DEB4E21FC2D26A00F45256 /* UploadPhotoViewController.xib */,
 			);
 			path = C;
-			sourceTree = "<group>";
-		};
-		A1DEB4E31FC2D26A00F45256 /* M */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = M;
-			sourceTree = "<group>";
-		};
-		A1DEB4E41FC2D26A00F45256 /* V */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = V;
 			sourceTree = "<group>";
 		};
 		A1DEB4E51FC2D26A00F45256 /* Main */ = {
@@ -774,9 +764,7 @@
 		A1DEB5051FC2D26B00F45256 /* From */ = {
 			isa = PBXGroup;
 			children = (
-				A1DEB5061FC2D26B00F45256 /* C */,
 				A1DEB5071FC2D26B00F45256 /* LogIn */,
-				A1DEB5181FC2D26B00F45256 /* M */,
 				A1DEB5191FC2D26B00F45256 /* MyAccount */,
 				A1DEB52D1FC2D26B00F45256 /* MyAddress */,
 				A1DEB53E1FC2D26B00F45256 /* MyCoin */,
@@ -787,16 +775,8 @@
 				A1DEB5A71FC2D26B00F45256 /* MyStudent */,
 				A1DEB5B51FC2D26B00F45256 /* MyTeach */,
 				A1DEB5BC1FC2D26B00F45256 /* Setting */,
-				A1DEB5CC1FC2D26B00F45256 /* V */,
 			);
 			path = From;
-			sourceTree = "<group>";
-		};
-		A1DEB5061FC2D26B00F45256 /* C */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = C;
 			sourceTree = "<group>";
 		};
 		A1DEB5071FC2D26B00F45256 /* LogIn */ = {
@@ -812,6 +792,10 @@
 		A1DEB5081FC2D26B00F45256 /* C */ = {
 			isa = PBXGroup;
 			children = (
+				A10DBD0B1FE115DB00D20698 /* PassWordLoginVC.h */,
+				A10DBD0C1FE115DC00D20698 /* PassWordLoginVC.m */,
+				A10DBD091FE115D300D20698 /* ForgotPasswordVC.h */,
+				A10DBD081FE115D300D20698 /* ForgotPasswordVC.m */,
 				A1DEB5091FC2D26B00F45256 /* LoginViewController.h */,
 				A1DEB50A1FC2D26B00F45256 /* LoginViewController.m */,
 				A1DEB50B1FC2D26B00F45256 /* LoginViewController.xib */,
@@ -836,18 +820,13 @@
 		A1DEB5141FC2D26B00F45256 /* V */ = {
 			isa = PBXGroup;
 			children = (
+				A10DBD0E1FE1169B00D20698 /* InputBoxView.h */,
+				A10DBD0F1FE1169B00D20698 /* InputBoxView.m */,
 				A1DEB5151FC2D26B00F45256 /* RelatedDataTableViewCell.h */,
 				A1DEB5161FC2D26B00F45256 /* RelatedDataTableViewCell.m */,
 				A1DEB5171FC2D26B00F45256 /* RelatedDataTableViewCell.xib */,
 			);
 			path = V;
-			sourceTree = "<group>";
-		};
-		A1DEB5181FC2D26B00F45256 /* M */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = M;
 			sourceTree = "<group>";
 		};
 		A1DEB5191FC2D26B00F45256 /* MyAccount */ = {
@@ -945,7 +924,6 @@
 			isa = PBXGroup;
 			children = (
 				A1DEB53F1FC2D26B00F45256 /* C */,
-				A1DEB5461FC2D26B00F45256 /* M */,
 				A1DEB5471FC2D26B00F45256 /* V */,
 			);
 			path = MyCoin;
@@ -962,13 +940,6 @@
 				A1DEB5451FC2D26B00F45256 /* ConvertCoinViewController.xib */,
 			);
 			path = C;
-			sourceTree = "<group>";
-		};
-		A1DEB5461FC2D26B00F45256 /* M */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = M;
 			sourceTree = "<group>";
 		};
 		A1DEB5471FC2D26B00F45256 /* V */ = {
@@ -1148,7 +1119,6 @@
 			isa = PBXGroup;
 			children = (
 				A1DEB59E1FC2D26B00F45256 /* C */,
-				A1DEB5A21FC2D26B00F45256 /* M */,
 				A1DEB5A31FC2D26B00F45256 /* V */,
 			);
 			path = MyMessage;
@@ -1162,13 +1132,6 @@
 				A1DEB5A11FC2D26B00F45256 /* MyMessageViewController.xib */,
 			);
 			path = C;
-			sourceTree = "<group>";
-		};
-		A1DEB5A21FC2D26B00F45256 /* M */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = M;
 			sourceTree = "<group>";
 		};
 		A1DEB5A31FC2D26B00F45256 /* V */ = {
@@ -1260,8 +1223,6 @@
 			isa = PBXGroup;
 			children = (
 				A1DEB5BD1FC2D26B00F45256 /* C */,
-				A1DEB5CA1FC2D26B00F45256 /* M */,
-				A1DEB5CB1FC2D26B00F45256 /* V */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -1283,27 +1244,6 @@
 				A1DEB5C91FC2D26B00F45256 /* SetViewController.xib */,
 			);
 			path = C;
-			sourceTree = "<group>";
-		};
-		A1DEB5CA1FC2D26B00F45256 /* M */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = M;
-			sourceTree = "<group>";
-		};
-		A1DEB5CB1FC2D26B00F45256 /* V */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = V;
-			sourceTree = "<group>";
-		};
-		A1DEB5CC1FC2D26B00F45256 /* V */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = V;
 			sourceTree = "<group>";
 		};
 		A1DEB5CD1FC2D26B00F45256 /* Main */ = {
@@ -1338,13 +1278,6 @@
 			children = (
 			);
 			path = V;
-			sourceTree = "<group>";
-		};
-		A1DEB5D41FC2D26B00F45256 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 		A1DEB5D51FC2D26C00F45256 /* CustomControls */ = {
@@ -1528,13 +1461,6 @@
 			path = Public;
 			sourceTree = "<group>";
 		};
-		A1DEB63D1FC2D26E00F45256 /* ThirdParty */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ThirdParty;
-			sourceTree = "<group>";
-		};
 		A1DEB63F1FC2D26F00F45256 /* MyTIme */ = {
 			isa = PBXGroup;
 			children = (
@@ -1618,13 +1544,6 @@
 				A1DEB6551FC2D26F00F45256 /* timeStateCVCell.m */,
 			);
 			path = V;
-			sourceTree = "<group>";
-		};
-		A1DEB6561FC2D27000F45256 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		AE2F253CE378BF377AF00928 /* Frameworks */ = {
@@ -1916,6 +1835,7 @@
 				A1DEB66B1FC2D27000F45256 /* TaskHeadView.m in Sources */,
 				A1DEB68D1FC2D27000F45256 /* ConvertCoinViewController.m in Sources */,
 				A1DEB6A11FC2D27000F45256 /* MyEvaluationCell.m in Sources */,
+				A10DBD101FE1169C00D20698 /* InputBoxView.m in Sources */,
 				A1DEB67F1FC2D27000F45256 /* TradingRecordModel+CoreDataClass.m in Sources */,
 				A1DEB6751FC2D27000F45256 /* UserDataModel+CoreDataClass.m in Sources */,
 				A1DEB6771FC2D27000F45256 /* RelatedDataTableViewCell.m in Sources */,
@@ -1934,6 +1854,7 @@
 				A1DEB4AC1FC2CDEA00F45256 /* main.m in Sources */,
 				A1DEB6DA1FC2D27000F45256 /* CZPhotoPreviewViewController.m in Sources */,
 				A1DEB6CF1FC2D27000F45256 /* SetViewController.m in Sources */,
+				A10DBD0D1FE115DC00D20698 /* PassWordLoginVC.m in Sources */,
 				A1DEB6691FC2D27000F45256 /* HistoryTableViewCell.m in Sources */,
 				A1DEB6671FC2D27000F45256 /* OrderTimeModel+CoreDataClass.m in Sources */,
 				A1DEB65B1FC2D27000F45256 /* GoComplaintViewController.m in Sources */,
@@ -1962,6 +1883,7 @@
 				A1DEB6961FC2D27000F45256 /* CouponsModel+CoreDataProperties.m in Sources */,
 				A1DEB67D1FC2D27000F45256 /* PurseNavigationViewController.m in Sources */,
 				A1DEB6F11FC2D27000F45256 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				A10DBD0A1FE115D300D20698 /* ForgotPasswordVC.m in Sources */,
 				A1DEB6B61FC2D27000F45256 /* CoachAuditStatusModel+CoreDataProperties.m in Sources */,
 				A1DEB6F31FC2D27000F45256 /* TPKeyboardAvoidingTableView.m in Sources */,
 				A1DEB6D11FC2D27000F45256 /* MyViewController.m in Sources */,
@@ -2184,7 +2106,7 @@
 				INFOPLIST_FILE = QiJiMaShuCoach/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.QiJiMaShu.www-iOSApp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.QiJiMaShuCoach.www-iOSApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2201,7 +2123,7 @@
 				INFOPLIST_FILE = QiJiMaShuCoach/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.QiJiMaShu.www-iOSApp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.QiJiMaShuCoach.www-iOSApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

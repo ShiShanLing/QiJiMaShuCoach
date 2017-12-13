@@ -1212,7 +1212,6 @@ static  BOOL EditTime;
                                 }else{
                                     //开始时间跟结束时间一致，代表要/分割
                                     descTime = [NSString stringWithFormat:@"%@/%@", descTime, selectTime];
-                                    
                                 }
                             }
                         }else{
@@ -1222,14 +1221,11 @@ static  BOOL EditTime;
                             if (![startTime isEqualToString:endTime]) {
                                 //开始时间跟结束时间不一致,表示是一个区间
                                 descTime = [NSString stringWithFormat:@"%@~%@/%@", descTime, endTime, selectTime];
-                                
                             }else{
                                 //开始时间跟结束时间一致，代表要/分割
                                 descTime = [NSString stringWithFormat:@"%@/%@", descTime, selectTime];
-                                
                             }
                             startTime = selectTime;
-                            
                         }
                     }
                 }

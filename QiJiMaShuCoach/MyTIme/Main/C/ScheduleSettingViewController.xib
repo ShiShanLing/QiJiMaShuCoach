@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -226,7 +226,7 @@
                                 <constraint firstAttribute="height" constant="1" id="hu7-2S-B5B"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间单价 (元/小时)" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oco-RO-9tE">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间单价 (元/鞍时)" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oco-RO-9tE">
                             <rect key="frame" x="10" y="0.0" width="580" height="38"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="580" id="Sqd-U6-c3h"/>
@@ -266,7 +266,7 @@
                         <constraint firstItem="PaD-mM-vnA" firstAttribute="leading" secondItem="Ham-i8-FRu" secondAttribute="leading" constant="10" id="vEB-sA-BLZ"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTh-JF-Wck" userLabel="教练车租金">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTh-JF-Wck" userLabel="教练马租金">
                     <rect key="frame" x="0.0" y="246" width="600" height="81"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNy-d0-adW" userLabel="underline">
@@ -276,7 +276,7 @@
                                 <constraint firstAttribute="height" constant="1" id="mzq-LS-zUK"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="教练车租用金(元/小时)" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tud-B8-hV6">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="马匹租用金(元/鞍时)" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tud-B8-hV6">
                             <rect key="frame" x="10" y="0.0" width="580" height="38"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="38" id="QhF-pG-Efr"/>
@@ -285,7 +285,7 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="请先选择课程" placeholder="请输入租用金单价（元/小时）" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1dn-D2-O81">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="请先选择课程" placeholder="请输入租用金单价（元/鞍时）" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1dn-D2-O81">
                             <rect key="frame" x="10" y="38" width="572" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="AaI-YH-mEz"/>
@@ -311,7 +311,7 @@
                         <constraint firstAttribute="trailing" secondItem="1dn-D2-O81" secondAttribute="trailing" constant="18" id="jF5-hJ-HFw"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxG-32-jki" userLabel="上车地点">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxG-32-jki" userLabel="马术学习地点">
                     <rect key="frame" x="0.0" y="327" width="600" height="81"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAR-7T-49U" userLabel="underline">
@@ -321,7 +321,7 @@
                                 <constraint firstAttribute="height" constant="1" id="gwE-z4-leX"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择学车地址" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVr-Es-0PS">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择马术学习地址" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVr-Es-0PS">
                             <rect key="frame" x="10" y="0.0" width="212" height="38"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="38" id="N2l-KO-Ioo"/>
@@ -331,7 +331,7 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请选择学车地址" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cM0-yR-FYO">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请选择马术学习地址" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cM0-yR-FYO">
                             <rect key="frame" x="10" y="38" width="555" height="30"/>
                             <gestureRecognizers/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>

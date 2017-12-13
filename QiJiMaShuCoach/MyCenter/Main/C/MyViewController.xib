@@ -917,7 +917,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4p7-cG-chd" userLabel="发放学车券">
                                     <rect key="frame" x="300" y="0.0" width="300" height="117"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学车券" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Qe-LP-99a">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="优惠券" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Qe-LP-99a">
                                             <rect key="frame" x="0.0" y="66" width="300" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="18" id="QtO-SY-rHb"/>
@@ -936,7 +936,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查看和发放学车券" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1N-6j-FzW">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查看优惠券" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1N-6j-FzW">
                                             <rect key="frame" x="0.0" y="92" width="300" height="12"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="12" id="bDH-mb-TF4"/>
@@ -1389,7 +1389,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNg-PE-G4I" userLabel="学车客服">
                                     <rect key="frame" x="300" y="237" width="300" height="117"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="车智联服务" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPK-UU-0zj">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="骐骥马术服务" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPK-UU-0zj">
                                             <rect key="frame" x="0.0" y="66" width="300" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="18" id="pKC-nU-on1"/>
@@ -1872,7 +1872,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学车币（个）" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1U-ZG-dFX">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="积分（个）" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1U-ZG-dFX">
                                             <rect key="frame" x="0.0" y="39" width="217" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="ilh-Pw-E3o"/>
@@ -1980,7 +1980,7 @@
                                                 <action selector="clickForConvertTicket:" destination="-1" eventType="touchUpInside" id="zuh-aY-jeQ"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学车券（张）" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bdm-16-8jp">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="优惠券（张）" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bdm-16-8jp">
                                             <rect key="frame" x="0.0" y="39" width="217" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="wQA-lR-dGh"/>
@@ -2726,7 +2726,7 @@
                                 </mask>
                             </variation>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学车完成后需双方互相评价，学车券/学车币才会结算到您的账户；" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9e-Ab-245">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学车完成后需双方互相评价，优惠券/积分才会结算到您的账户；" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9e-Ab-245">
                             <rect key="frame" x="24" y="66" width="244" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="3GK-QF-A3n"/>
@@ -2748,7 +2748,7 @@
                                 </mask>
                             </variation>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="若学员超过3天未评价，学车券/学车币将自动结算到您的账户。" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogO-Jb-I5g">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="若学员超过3天未评价，优惠券/积分将自动结算到您的账户。" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogO-Jb-I5g">
                             <rect key="frame" x="24" y="118" width="244" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="244" id="Da9-O7-GL8"/>
@@ -2928,7 +2928,7 @@
         <image name="icon_chongzhi" width="52" height="29"/>
         <image name="icon_pencil" width="16" height="16"/>
         <image name="icon_portrait_default" width="82" height="82"/>
-        <image name="icon_setting" width="19" height="18"/>
+        <image name="icon_setting" width="22" height="22"/>
         <image name="icon_tousu" width="37" height="33"/>
         <image name="im_bg" width="320" height="195"/>
         <image name="line_horiz_grey" width="1" height="1"/>

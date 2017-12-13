@@ -24,6 +24,9 @@
     NSString *isChangeCity;
 //    NSString *cityid;
 }
+@property (weak, nonatomic) IBOutlet UIView *windowView;
+
+
 @property (strong, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *mainScrollView;
 @property (strong, nonatomic) IBOutlet UIButton *commitBtn;
 @property (strong, nonatomic) IBOutlet UIView *idPhototView;
@@ -51,11 +54,11 @@
 @property (strong, nonatomic) IBOutlet UITextField *coachCardField;
 @property (strong, nonatomic) IBOutlet UIImageView *coachCardPencilImage;
 
-// 骑驶证号
+// 驾驶证号
 @property (strong, nonatomic) IBOutlet UITextField *driveCardField;
 @property (strong, nonatomic) IBOutlet UIImageView *driveCardPencilImage;
 
-// 马匹年检证号
+// 汽车年检证号
 @property (strong, nonatomic) IBOutlet UITextField *carCheckField;
 @property (strong, nonatomic) IBOutlet UIImageView *carCheckPencilImage;
 
@@ -63,24 +66,24 @@
 @property (strong, nonatomic) IBOutlet UITextField *teachCarField;
 @property (strong, nonatomic) IBOutlet UIImageView *teachCarPencilImage;
 
-// 教学用马型号
+// 教学用车型号
 @property (strong, nonatomic) IBOutlet UITextField *teachCarCardField;
 
-// 准教马型
+// 准教车型
 @property (strong, nonatomic) IBOutlet UIButton *C1Button;
 @property (strong, nonatomic) IBOutlet UIButton *C2Button;
 
-@property (strong, nonatomic) IBOutlet UILabel *coachCarLabel ; //教练车型选择
+@property (strong, nonatomic) IBOutlet UILabel *coachCarLabel ; //教练马种选择
 
 @property (strong, nonatomic) IBOutlet UIView *carModelView;
 @property (strong, nonatomic) IBOutlet UITextField *carModelField;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *carModelViewHeight;
 @property (strong, nonatomic) IBOutlet UIView *selectView; // 选择器
 @property (nonatomic, strong) IBOutlet UIPickerView *carModelPicker;
-@property (strong, nonatomic) NSMutableArray *carModelArray;      // 准教车型
+@property (strong, nonatomic) NSMutableArray *carModelArray;      // 准教马种
 @property (strong, nonatomic) NSMutableArray *myCarModelArray;
 @property (strong, nonatomic) IBOutlet UIButton *teachCarBtnOutlet;
-@property (strong, nonatomic) NSMutableArray *TeachCarModeArray;  // 教学用车型号
+@property (strong, nonatomic) NSMutableArray *TeachCarModeArray;  // 教学用马种号
 @property (strong, nonatomic) NSMutableArray *carSchoolArray;
 
 @property (strong, nonatomic) IBOutlet UIButton *idCardDelBtn;
@@ -98,10 +101,10 @@
 // 教练证到期时间
 @property (strong, nonatomic) IBOutlet UITextField *coachMadeTimeField;
 
-// 骑行证到期时间
+// 驾驶证到期时间
 @property (strong, nonatomic) IBOutlet UITextField *driveMadeTimeField;
 
-// 马匹年检证到期时间
+// 汽车年检证到期时间
 @property (strong, nonatomic) IBOutlet UITextField *carCheckMadeTimeField;
 
 /*  以下4个view内部各有5个子控件，其tag为:
@@ -114,8 +117,8 @@
 @property (strong, nonatomic) IBOutlet UIView *idCardFrontView;     // 身份证正面
 @property (strong, nonatomic) IBOutlet UIView *idCardBackView;      // 身份证反面
 @property (strong, nonatomic) IBOutlet UIView *coachCardView;       // 教练证
-@property (strong, nonatomic) IBOutlet UIView *coachCarCardView;    // 教练马驶证
-@property (strong, nonatomic) IBOutlet UIView *carCheckView;      // 车辆行驶证正面
+@property (strong, nonatomic) IBOutlet UIView *coachCarCardView;    // 教练马驾驶证
+@property (strong, nonatomic) IBOutlet UIView *carCheckView;      // 马匹行驶证正面
 @property (strong, nonatomic) IBOutlet UIView *carCheckBackView;       // 车辆行驶证反面
 @property (strong, nonatomic) IBOutlet UIView *coachTureIconView;    // 教练真实头像
 
@@ -135,7 +138,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *idCardImageView; // 身份证正面
 @property (strong, nonatomic) IBOutlet UIImageView *idCardBackImageView;  // 身份证反面
 @property (strong, nonatomic) IBOutlet UIImageView *coachCardImageView; // 教练证 ----
-@property (strong, nonatomic) IBOutlet UIImageView *coachCarCardImageView; // 教练马驶证
+@property (strong, nonatomic) IBOutlet UIImageView *coachCarCardImageView; // 教练车驾驶证
 @property (strong, nonatomic) IBOutlet UIImageView *carCheckImageView; // 车辆年检证&车辆行驶证正面
 @property (strong, nonatomic) IBOutlet UIImageView *carCheckBackImageView; // 车辆行驶证反面
 @property (strong, nonatomic) IBOutlet UIImageView *coachTureIconImageView; // 教练真实照片
@@ -184,7 +187,7 @@
 @property (assign, nonatomic) NSInteger dataTag;
 @property (assign, nonatomic) NSInteger teachCarTag;
 
-// 选择教学车型ID
+// 选择教学马种ID
 @property (copy, nonatomic) NSString *teachCarID;
 @property (copy, nonatomic) NSString *carSchoolID;
 
@@ -221,7 +224,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    carTypeName = @"C1";
+    carTypeName = @"训练马";
     carTypeId = @"1";
     [self RequestCoachCurrentState];
     self.coachCardImageView.tag = 201;
@@ -285,7 +288,7 @@
 }
 
 - (void) RequestCoachCurrentState{
-    //http://192.168.100.101:8080/com-zerosoft-boot-assembly-seller-local-1.0.0-SNAPSHOT/coach/api/detail?coachId=
+    //http://106.14.158.95:8081/school/coach/api/detail?coachId=26419f83f0434e6ab0e2ccd3df0899cf
     
     NSString *URL_Str = [NSString stringWithFormat:@"%@/coach/api/detail", kURL_SHY];
     NSMutableDictionary *URL_Dic = [NSMutableDictionary dictionary];
@@ -309,7 +312,7 @@
 }
 
 - (void)ParsingCoachData:(NSDictionary *)dataDic {
-    
+    self.windowView.hidden = YES;
     if (![dataDic[@"data"] isKindOfClass:[NSArray class]]) {
         [self showAlert:@"资料获取失败" time:1.0];
         return;
@@ -342,35 +345,38 @@
             [UserDataSingleton mainSingleton].carTypeId =[NSString stringWithFormat:@"%@", coachDataDic[key]];
         }
         [model setValue:coachDetailsDic[key] forKey:key];
-        
     }
     [UserDataSingleton mainSingleton].approvalState = [NSString stringWithFormat:@"%d", model.state];
     NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@" "];
     self.cityNameLabel.text = [model.address  stringByTrimmingCharactersInSet:set];
     self.schoolTextFiled.text = model.phone;
-    self.coachCarLabel.text = @"C1";
+    self.coachCarLabel.text = model.carTypeName;
     self.coachNameLabel.text = model.realName;
-    [self.coachCardImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/img%@", kURL_SHY, model.idCardFront]] placeholderImage:[UIImage imageNamed:@"bg_myinfo_camera"]];
-    [self.coachCarCardImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/img%@", kURL_SHY, model.idCardBack]] placeholderImage:[UIImage imageNamed:@"bg_myinfo_camera"]];
-    [self.carCheckImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/img%@", kURL_SHY, model.coachCertificate]] placeholderImage:[UIImage imageNamed:@"bg_myinfo_camera"]];
-    [self.carCheckBackImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/img%@", kURL_SHY, model.driveCertificate]] placeholderImage:[UIImage imageNamed:@"bg_myinfo_camera"] ];
+    [self.coachCardImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/img%@", kURL_Image, model.idCardFront]] placeholderImage:[UIImage imageNamed:@"bg_myinfo_camera"]];
+    [self.coachCarCardImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/img%@", kURL_Image, model.idCardBack]] placeholderImage:[UIImage imageNamed:@"bg_myinfo_camera"]];
+    [self.carCheckImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/img%@", kURL_Image, model.coachCertificate]] placeholderImage:[UIImage imageNamed:@"bg_myinfo_camera"]];
+    [self.carCheckBackImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/img%@", kURL_Image, model.driveCertificate]] placeholderImage:[UIImage imageNamed:@"bg_myinfo_camera"] ];
     int state = model.state;
     switch (state) {
         case 0:
             self.warmingLabel.text = @"您还未提交申请...";
              self.commitBtn.hidden = NO;
+            self.windowView.hidden = YES;
             break;
         case 1:
             self.warmingLabel.text = @"正在等待审核..";
              self.commitBtn.hidden = YES;
+            self.windowView.hidden = NO;
             break;
         case 2:
             self.warmingLabel.text = @"申请已经通过";
              self.commitBtn.hidden = YES;
+            self.windowView.hidden = NO;
             break;
         case 3:
             self.warmingLabel.text = @"申请已经拒绝";
              self.commitBtn.hidden = NO;
+            self.windowView.hidden = YES;
             break;
         default:
             break;
@@ -598,7 +604,7 @@
     }
 }
 #pragma mark - 按钮方法
-//弹出马场选择框
+//弹出驾校选择框
 - (IBAction)clickForSelectSchool:(id)sender {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"联系方式" message:@"请填写" preferredStyle:UIAlertControllerStyleAlert];
     [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
@@ -646,7 +652,7 @@
     }
     
     if (self.coachCarLabel.text.length == 0) {
-        [self makeToast:@"请选择车型"];
+        [self makeToast:@"请选择马种"];
         return;
     }
     if (self.coachNameLabel.text.length == 0) {
@@ -838,7 +844,7 @@
         if(row == (_TeachCarModeArray.count - 1)){
             self.teachCarBtnOutlet.hidden = YES;
             _teachCarCardField.text = @"";
-            _teachCarCardField.placeholder = @"请输入您的教学车型";
+            _teachCarCardField.placeholder = @"请输入您的教学马种类型";
             _teachCarID = @"";
             [self.teachCarCardField becomeFirstResponder];
         }else{
@@ -922,7 +928,7 @@
 #pragma mark - LocationViewControllerDelegate
 - (void)location:(LocationViewController *)viewController selectDic:(NSDictionary *)selectDic{
     isChangeCity = @"1";
-    
+    NSLog(@"selectDic%@", selectDic);
     self.selectProvince = selectDic[@"province"];
     self.selectCity = selectDic[@"city"];
     self.selectArea = selectDic[@"area"];
@@ -938,7 +944,10 @@
     } else {
         addrStr =  [NSString stringWithFormat:@"%@ - %@ - %@", self.selectProvince.provinceName, self.selectCity.cityName, areaStr];
     }
-
+    
+    NSLog(@"self.selectProvince.provinceName%@self.selectCity.cityName%@", self.selectProvince.provinceName,self.selectCity.cityName);
+    
+    
     self.cityNameLabel.text = addrStr;
 }
 //选择城市

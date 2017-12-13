@@ -13,14 +13,24 @@
 @property (strong, nonatomic) NSMutableDictionary *msgDic;//参数
 @property (strong, nonatomic) IBOutlet UIButton *C1Button;
 @property (strong, nonatomic) IBOutlet UIButton *C2Button;
-
+@property (weak, nonatomic) IBOutlet UILabel *courseOne;
+@property (weak, nonatomic) IBOutlet UILabel *courseTwo;
+@property (strong,nonatomic) NSMutableArray *modelArray;
 @end
 
 @implementation CarModelViewController
-
+- (NSMutableArray *)modelArray {
+    if (!_modelArray) {
+        _modelArray = [NSMutableArray array];
+    }
+    return _modelArray;
+}
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self requestCarTypeData];
+    
+    
+    
 }
 
 - (void)requestCarTypeData {
@@ -34,7 +44,13 @@
         NSLog(@"responseObject%@", responseObject);
         NSString *resultStr = [NSString stringWithFormat:@"%@", responseObject[@"result"]];
         if ([resultStr isEqualToString:@"1"]) {
-            
+            VC.modelArray = [NSMutableArray arrayWithArray:responseObject[@"data"]];
+            if (VC.modelArray.count != 0) {
+                NSDictionary *dic1 = VC.modelArray[0];
+                VC.courseOne.text = dic1[@"carTypeName"];
+                NSDictionary *dic2 = VC.modelArray[1];
+                VC.courseTwo.text = dic2[@"carTypeName"];
+            }
         }else {
             [VC showAlert:responseObject[@"msg"] time:1.2];
         }
@@ -42,7 +58,6 @@
         NSLog(@"error%@", error);
     }];
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,7 +69,7 @@
     [self.C2Button setImage:[UIImage imageNamed:@"ic_selected_c2car"] forState:UIControlStateSelected];
     
     NSDictionary *userInfo = [CommonUtil getObjectFromUD:@"userInfo"];
-    NSString *modelid = [userInfo[@"modelid"]description];//准教车型id
+    NSString *modelid = [userInfo[@"modelid"]description];//准教马种id
     NSArray *array = [modelid componentsSeparatedByString:@","];
     for (int i=0; i<array.count; i++) {
         NSString *model = array[i];
@@ -66,6 +81,7 @@
         }
     }
 }
+
 - (IBAction)clickForC1:(id)sender {
     self.C2Button.selected = self.C1Button.selected;
     if (self.C1Button.selected) {
@@ -86,20 +102,22 @@
     if (self.C1Button.selected || self.C2Button.selected) {
         [self pushCarModel];
     }else{
-        [self makeToast:@"请至少选择一种车型"];
+        [self makeToast:@"请至少选择一项"];
     }
 }
 
 - (void)pushCarModel{
-   
     
     NSString *carStr;
     if (self.C1Button.selected) {
-        
-        self.blockCar(@"C1",@"1");
+        NSDictionary *dic1 = self.modelArray[0];
+        self.courseOne.text = dic1[@"carTypeName"];
+        self.blockCar(dic1[@"carTypeName"],dic1[@"carTypeId"]);
     }
     if (self.C2Button.selected) {
-        self.blockCar(@"C2",@"2");
+        NSDictionary *dic2 = self.modelArray[1];
+        self.courseTwo.text = dic2[@"carTypeName"];
+        self.blockCar(dic2[@"carTypeName"],dic2[@"carTypeId"]);
     }
     [self.navigationController popViewControllerAnimated:YES];
     

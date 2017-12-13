@@ -109,7 +109,7 @@
     self.priceLabel.text = [NSString stringWithFormat:@"￥%@",total];
     //地址
     self.addressLabel.text = address;
-    NSString *nameStr = [NSString stringWithFormat:@"教练: %@ %@", model.coachName ,model.subType==0?@"科目二":@"科目三"];
+    NSString *nameStr = [NSString stringWithFormat:@"教练: %@ %@", model.coachName ,model.subType==0?@"初级课程":@"中级课程"];
     self.coachNameLabel.text = nameStr;
     
 }

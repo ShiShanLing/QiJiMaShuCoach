@@ -80,7 +80,7 @@
     //合计时间
     NSString *ticketNum = @"0";
     NSString *altogetherHours = @"0";
-    NSString *altogetherTimeStr = [NSString stringWithFormat:@"已选%@张共%@小时",ticketNum,altogetherHours];
+    NSString *altogetherTimeStr = [NSString stringWithFormat:@"已选%@张共%@鞍时",ticketNum,altogetherHours];
     self.altogetherTime.text = altogetherTimeStr;
     
     self.ruleBackView.layer.cornerRadius = 3;
@@ -334,7 +334,7 @@
             time += model.couponDuration;
         }
     }
-    NSString *altogetherTimeStr = [NSString stringWithFormat:@"已选%d张共%d小时",num,time];
+    NSString *altogetherTimeStr = [NSString stringWithFormat:@"已选%d张共%d鞍时",num,time];
     self.altogetherTime.text = altogetherTimeStr;
     [self.mainTableView reloadData];
 }

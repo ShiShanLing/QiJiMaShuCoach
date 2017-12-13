@@ -156,7 +156,7 @@
                             <constraint firstAttribute="width" constant="88" id="eRu-Q1-IZk"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <state key="normal" title="确认上车">
+                        <state key="normal" title="确认开始">
                             <color key="titleColor" red="0.99147397280000005" green="0.98854380850000001" blue="0.98822039370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <connections>

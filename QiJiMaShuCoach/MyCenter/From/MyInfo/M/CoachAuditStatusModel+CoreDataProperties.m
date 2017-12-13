@@ -36,6 +36,7 @@
 @dynamic balance;
 @dynamic teachAge;
 @dynamic descriptionStr;
+@dynamic carTypeName;
 -(void)setValue:(id)value forKey:(NSString *)key {
     if ([key isEqualToString:@"createTime"]) {
    //     int 转 nsstring 再转 nsdate

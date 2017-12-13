@@ -55,7 +55,7 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setFrame:CGRectMake(kScreen_widht - 65 - 13, - 4, 65, 60)];
         [button addTarget:self action:@selector(clickToDefaultTeach:) forControlEvents:UIControlEventTouchUpInside];
-        [button setTitle:@"[默认科目]" forState:UIControlStateNormal];
+        [button setTitle:@"[默认课程]" forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize: 13.0];
         [button setTitleColor:MColor(84, 204, 153) forState:UIControlStateNormal];
         button.backgroundColor = [UIColor clearColor];
@@ -70,7 +70,7 @@
     
     // 加载数据
     NSDictionary *dic = self.teachArray[indexPath.row];
-    NSString *iscurr = [dic[@"isdefault"] description];//是否是当前使用科目 0.不是 1.是
+    NSString *iscurr = [dic[@"isdefault"] description];//是否是当前使用课程 0.不是 1.是
     NSString *subjectname = dic[@"subjectname"];
     cell.detailTextLabel.text = subjectname;
     CGSize size = [CommonUtil sizeWithString:subjectname fontSize:17 sizewidth:kScreen_widht - 65 sizeheight:MAXFLOAT];
@@ -143,19 +143,19 @@
     [self.defaultTeachView removeFromSuperview];
 }
 
-#pragma mark 设置为默认科目
+#pragma mark 设置为默认课程
 - (IBAction)clickToSetDefaultTeach:(id)sender {
     [self setDefaultTeach:self.teachssid];
     
 }
 
 #pragma mark - 接口
-//获取科目信息
+//获取课程信息
 - (void)getTeachData{
    [self makeToast:@"功能未开通"];
 }
 
-//设为默认科目
+//设为默认课程
 - (void)setDefaultTeach:(NSString *)teachid{
 
     [self makeToast:@"功能未开通"];

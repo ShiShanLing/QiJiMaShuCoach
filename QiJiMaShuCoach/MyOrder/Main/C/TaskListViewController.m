@@ -315,11 +315,11 @@
     NSString *btnState;
     switch (timeModel.trainState) {
         case 0:
-            btnState = @"确认上车";
+            btnState = @"确认开始马术学习";
             cell.timeEditorBtn.backgroundColor = MColor(0, 190, 122);
             break;
         case 1:
-            btnState = @"确认下车";
+            btnState = @"确认结束马术学习";
             cell.timeEditorBtn.backgroundColor = MColor(0, 190, 122);
             break;
         case 2:
@@ -372,10 +372,10 @@
     NSString *btnState;
     switch (timeModel.trainState) {
         case 0:
-            btnState = @"确认学员上车";
+            btnState = @"确认开始马术学习";
             break;
         case 1:
-            btnState = @"确认学员下车";
+            btnState = @"确认结束马术学习";
             break;
         case 2:
             return;
@@ -543,7 +543,7 @@ __weak  TaskListViewController *VC = self;
     UIImage *image = [UIImage imageNamed:@"background_practice"];
     [image resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
     [button setBackgroundImage:image forState:UIControlStateNormal];
-    [button setTitle:@"练车中" forState:UIControlStateNormal];
+    [button setTitle:@"学马术中" forState:UIControlStateNormal];
     button.enabled = NO;
 }
 #pragma mark 取消评论

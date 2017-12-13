@@ -79,7 +79,7 @@
     NSString *realname = @"10";
     NSString *coinnum = @"100";
     
-    NSString *titleLabelStr = [NSString stringWithFormat:@"%@教练学车币：%@个",realname,coinnum];
+    NSString *titleLabelStr = [NSString stringWithFormat:@"%@教练马术币：%@个",realname,coinnum];
     
     NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:titleLabelStr];
     [string addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(realname.length+6,coinnum.length)];
@@ -192,7 +192,7 @@
     if ([payertype intValue] == 2) {
         coinFrom = [NSString stringWithFormat:@"发放方：%@",ownername];
         coinNumStr = [NSString stringWithFormat:@"-%@",coinnum];
-        coinWay = @"学车币兑换";
+        coinWay = @"马术币兑换";
         cell.cheakBtn.hidden = NO;
         [cell.cheakBtn addTarget:self action:@selector(clickForCheak:) forControlEvents:UIControlEventTouchUpInside];
         cell.cheakBtn.tag = indexPath.row;
@@ -317,7 +317,7 @@
 }
 
 #pragma mark - 接口
-- (void)getAPPLYCOIN  //兑换学车币
+- (void)getAPPLYCOIN  //兑换马术币
 {
     
   }
@@ -338,7 +338,7 @@
     NSString *type = @"1";
     NSString *titleLabelStr;
     NSMutableAttributedString *string;
-    NSString *coinnum = [dic[@"coin"] description];//学车币个数
+    NSString *coinnum = [dic[@"coin"] description];//马术币个数
     if ([type intValue] == 0) {
         titleLabelStr = [NSString stringWithFormat:@"平台学马币：%@个",@"100"];
         string = [[NSMutableAttributedString alloc] initWithString:titleLabelStr];

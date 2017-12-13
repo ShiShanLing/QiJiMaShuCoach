@@ -9,7 +9,7 @@
 #import "LoginViewController.h"
 #import "AppDelegate.h"
 #import "CoachInfoViewController.h"
-
+#import "PassWordLoginVC.h"
 @interface LoginViewController ()<UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -94,7 +94,6 @@
 
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
@@ -119,8 +118,6 @@
         return ;
     }
     [self login:phone passWord:password];
-    
-    
 }
 
 // 取消
@@ -200,10 +197,12 @@
         countDownButton.enabled = YES;
         return @"点击重新获取";
     }];
-    //http://106.14.158.95:8080/com-zerosoft-boot-assembly-seller-local-1.0.0-SNAPSHOT/floor/api/verifyCode?mobile=13646712075
+  //  http://106.14.158.95:8081/school/floor/api/verifyCode?mobile=13646712075
     NSString *URL_Str = [NSString stringWithFormat:@"%@/floor/api/verifyCode", kURL_SHY];
     NSMutableDictionary *URL_Dic = [NSMutableDictionary dictionary];
+    
     URL_Dic[@"mobile"] = phone;
+    NSLog(@"URL_Str%@URL_Dic%@", URL_Str,URL_Dic);
     NSLog(@"%@", URL_Dic);
     __weak LoginViewController *VC = self;
     AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
@@ -345,14 +344,18 @@
     [app jumpToMainViewController];
 }
 
-
 - (IBAction)handleDirectLogin:(UIButton *)sender {
-    
     // 用户密码都不为空调用接口
     AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [app jumpToMainViewController];
     
 }
 
+- (IBAction)handlePasswordLogin:(id)sender {
+    
+    PassWordLoginVC *VC = [[PassWordLoginVC alloc] init];
+    [self.navigationController pushViewController:VC animated:YES];
+    
+}
 
 @end

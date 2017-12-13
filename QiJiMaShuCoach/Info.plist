@@ -18,37 +18,6 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
-	<key>CFBundleVersion</key>
-	<string>1</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>armv7</string>
-	</array>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>上传照片需要访问你的相机</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>骐骥马术想要使用您的相机</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>上传照片需要访问你的相册</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -75,22 +44,15 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.QiJiMaShu.www-iOSApp</string>
+			<string>com.QiJiMaShuCoach.www-iOSApp</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>chezhilianCoach</string>
+				<string>QiJiMaShuCoach</string>
 			</array>
 		</dict>
 	</array>
-	<key>MOBAppKey</key>
-	<string>moba6b6c6d6</string>
-	<key>MOBAppSecret</key>
-	<string>b89d2427a3bc7ad1aea1e1e8c1d36bf3</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
+	<key>CFBundleVersion</key>
+	<string>1</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>wechat</string>
@@ -108,6 +70,44 @@
 		<string>mqqapi</string>
 		<string>mqqwpa</string>
 		<string>mqzone</string>
+	</array>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>MOBAppKey</key>
+	<string>moba6b6c6d6</string>
+	<key>MOBAppSecret</key>
+	<string>b89d2427a3bc7ad1aea1e1e8c1d36bf3</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>上传照片需要访问你的相机</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>骐骥马术想要使用您的相机</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>上传照片需要访问你的相册</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 </dict>
 </plist>
