@@ -9,7 +9,6 @@ pod 'ShareSDK3/ShareSDKPlatforms/QQ'
 pod 'ShareSDK3/ShareSDKPlatforms/WeChat'
 pod 'MJExtension'
 pod 'AFNetworking'
-pod 'BaiduMapKit'
 pod 'MJRefresh'
 pod 'MBProgressHUD'
 pod 'FMDB’
