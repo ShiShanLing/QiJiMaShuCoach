@@ -894,7 +894,7 @@
     }
     // 教练车行驶证
     if (sender.tag == 402) {
-        NSLog(@"教练车行驶证");
+        NSLog(@"马术证明");
     }
 }
 #pragma mark - 拍照

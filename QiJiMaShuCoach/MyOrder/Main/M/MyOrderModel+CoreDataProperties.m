@@ -37,7 +37,9 @@
     }else if([key isEqualToString:@"orderDate"]){
         NSString *str=[NSString stringWithFormat:@"%@", value];
         self.orderDate = [CommonUtil  getDataForSJCString:str];
-    }else {
+    }else if([key isEqualToString:@"phone"]){
+        self.studentPhone = value;
+    }else{
         [super setValue:value forKey:key];
     }
 }

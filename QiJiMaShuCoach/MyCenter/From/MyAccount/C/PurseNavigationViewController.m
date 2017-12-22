@@ -27,7 +27,10 @@
     AmountDetailViewController *nextController = [[AmountDetailViewController alloc] initWithNibName:@"AmountDetailViewController" bundle:nil];
     [self.navigationController pushViewController:nextController animated:YES];
 }
+
 - (IBAction)clickForCoinDetail:(id)sender {
+    [self  showAlert:@"该功能未开通!" time:0.8];
+    return;
     ConvertCoinViewController *nextController = [[ConvertCoinViewController alloc] initWithNibName:@"ConvertCoinViewController" bundle:nil];
     [self.navigationController pushViewController:nextController animated:YES];
 }

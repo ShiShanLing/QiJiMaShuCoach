@@ -303,7 +303,7 @@
 }
 
 - (IBAction)clickForConvertCoin:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"确定兑换所有学车币吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"确定兑换所有积分吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     [alert show];
     UIButton *button = (UIButton *)sender;
     buttonTag = [NSString stringWithFormat:@"%ld",(long)button.tag];

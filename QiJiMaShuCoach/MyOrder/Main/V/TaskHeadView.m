@@ -50,18 +50,23 @@
 }
 //打短信
 - (IBAction)handleTexting:(DSButton *)sender {
-    
-    
+    if ([_delegate respondsToSelector:@selector(handleTexting:)]) {
+        [_delegate handleTexting:self.model.studentPhone];
+    }
 }
 //打电话
 - (IBAction)handleMakePhone:(DSButton *)sender {
+    if ([_delegate respondsToSelector:@selector(handleMakePhoneCall:)]) {
+        [_delegate handleMakePhoneCall:self.model.studentPhone];
+    }
     
 }
 - (void)setModel:(MyOrderModel *)model {
-    self.usetNameLabel.text = @"订单状态(等待数据处理)";
+    self.usetNameLabel.text = @"订单状态:";
     self.dateLabel.text = [CommonUtil getStringForDate:model.orderDate format:@"yyyy-MM-dd"];
-    self.studentNameLabel.text = @"学员名字(空)";
-    self.studentPhoneLabel.text = [NSString stringWithFormat:@"联系电话 : 等待数据处理"];
+    
+    self.studentNameLabel.text = [NSString stringWithFormat:@"学员名字:%@",model.studentName];
+    self.studentPhoneLabel.text =[NSString stringWithFormat:@"学员电话:%@",model.studentPhone];
     
     self.studentCardNumLabel.text = @"学员证号 : 123456789";
     self.orderTotalPriceLabel.text = [NSString stringWithFormat:@"订单总价 : %d",model.orderAmount];

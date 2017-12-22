@@ -99,17 +99,20 @@
  */
 @property (nonatomic, strong)NSMutableArray *userDataArray;
 
+@property (weak, nonatomic) IBOutlet UIButton *myInfoBtn;
+
+
 @end
 
 @implementation MyViewController
+
+
 
 -(NSMutableArray *)userDataArray {
     if (!_userDataArray) {
         _userDataArray = [NSMutableArray array];
     }
-
     return _userDataArray;
-
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -119,17 +122,15 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    
     [super viewWillAppear:animated];
     [self AnalysisUserData];
     [self getMessageCount];
     [self updateMoney];
-    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.myInfoBtn.hidden = YES;
     // 注册监听
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(LogOut:) name:@"LogOut" object:nil];
     
@@ -265,26 +266,6 @@
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     return YES;
 }
-
-- (void)dealloc {
-    self.mainScrollView.delegate = nil;
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-#pragma mark - UIScrollViewDelegate
-
-- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
-    
-    
-}   // called on finger up as we are moving
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    self.mainScrollView.contentOffset = CGPointMake(0, 0);
-}      // called when scroll view grinds to a halt
-
-
-- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view NS_AVAILABLE_IOS(3_2) {
-    
-    
-} // called before the scroll view begins zooming its content
 
 #pragma mark - 键盘遮挡输入框处理
 // 监听键盘弹出通知
@@ -450,6 +431,7 @@
 }
 //查看积分详情
 - (IBAction)clickForCoinDetail:(id)sender {
+    [self showAlert:@"该功能暂未开通" time:0.8];
     ConvertCoinViewController *nextController = [[ConvertCoinViewController alloc] initWithNibName:@"ConvertCoinViewController" bundle:nil];
     [self.navigationController pushViewController:nextController animated:YES];
 }
@@ -573,12 +555,13 @@
 }
 //发放优惠券
 - (IBAction)clickForSendCoupon:(id)sender {
-//    CouponNavigateViewController *targetViewController = [[CouponNavigateViewController alloc] initWithNibName:@"CouponNavigateViewController" bundle:nil];
-//    [self.navigationController pushViewController:targetViewController animated:YES];
+    CouponNavigateViewController *targetViewController = [[CouponNavigateViewController alloc] initWithNibName:@"CouponNavigateViewController" bundle:nil];
+    [self.navigationController pushViewController:targetViewController animated:YES];
 }
 //在线客服
 - (IBAction)clickForOnlineServe:(id)sender {
-   
+    [self showAlert:@"该功能暂未开通" time:0.8];
+    return;
 }
 #warning 暂时不知道是干什么的 监听某个事件
 - (void)chatAction:(NSNotification *)notification {
@@ -664,7 +647,6 @@
 //更新余额
 - (void)updateMoney{
     NSDictionary *userInfo = [CommonUtil getObjectFromUD:@"userInfo"];
-    
   }
 //充值
 - (void)rechargeMoney:(NSString *)money{
@@ -694,6 +676,8 @@
 //分享有礼
 - (IBAction)clickForRecommendPrize:(id)sender {
     
+    [self showAlert:@"该功能呢暂未开通" time:0.8];
+    return;
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
     NSArray* imageArray = @[[UIImage imageNamed:@"AppIcon"]];
     [shareParams SSDKSetupShareParamsByText:@"分享内容"
@@ -731,7 +715,6 @@
     
     
 }
-
 
 #pragma make  数据获取
 - (void)AnalysisUserData{
@@ -851,8 +834,9 @@
         self.mainScrollView.userInteractionEnabled=YES;
         
         //http://www.jxchezhilian.com/img/upload/img/avatar/1510193524723.png
-        NSString  *url_Str = [NSString stringWithFormat:@"%@/img%@",kURL_Image, model.avatar];
-        
+        NSString  *url_Str = [NSString stringWithFormat:@"%@%@",kURL_Image, model.avatar];
+        self.logoImageView.layer.cornerRadius = 5;
+        self.logoImageView.layer.masksToBounds = YES;
         //头像
         [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:url_Str] placeholderImage:[UIImage imageNamed:@"icon_portrait_default"] options:SDWebImageProgressiveDownload];
         //昵称
@@ -862,7 +846,7 @@
             self.nameLabel.text = name;
         }
         self.phoneLabel.text = phone;
-        [self.trainTimeButton setTitle:[NSString stringWithFormat:@" 已累计培训%@鞍时",totalTime] forState:UIControlStateNormal];
+        [self.trainTimeButton setTitle:[NSString stringWithFormat:@"",totalTime] forState:UIControlStateNormal];
         NSString *money = [NSString stringWithFormat:@"%.2f", model.balance];//余额
         NSLog(@"CoachAuditStatusModel%.2f", model.balance);
         self.cashLabel.text = [NSString stringWithFormat:@"%@",money];

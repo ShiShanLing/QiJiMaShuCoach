@@ -20,7 +20,7 @@
 #import "TaskTimeDetailsTVCell.h"
 #import "TaskHeadView.h"//页眉视图
 
-@interface TaskListViewController ()<UITableViewDataSource, UITableViewDelegate, DSPullToRefreshManagerClient, DSBottomPullToMoreManagerClient, UIAlertViewDelegate, StarRatingViewDelegate, UITextViewDelegate, TaskListTableViewCellDelgate,TaskTimeDetailsTVCellDeleagte>{
+@interface TaskListViewController ()<UITableViewDataSource, UITableViewDelegate, DSPullToRefreshManagerClient, DSBottomPullToMoreManagerClient, UIAlertViewDelegate, StarRatingViewDelegate, UITextViewDelegate, TaskListTableViewCellDelgate,TaskTimeDetailsTVCellDeleagte,TaskHeadViewDelegate>{
     int pageNum;
     BOOL hasTask;//是否有进行中的任务
     BOOL isRefresh;//是否刷新
@@ -138,6 +138,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self versionUpdate];
     isRefresh = YES;
     [self refreshData];
 }
@@ -276,7 +277,7 @@
     NSArray *timeModelArray = (NSArray *)orderModel.orderTimes;
     if (orderModel.state == 2) {
         if (indexPath.row == timeModelArray.count -1) {
-            return 193;
+            return 193;                     
         }else {
             return 142;
         }
@@ -291,14 +292,19 @@
     NSArray *timeModelArray = (NSArray *)orderModel.orderTimes;
     //这个判断是判断是否显示 拒绝和同意
     if (orderModel.state == 2) {
+        cell.timeEditorBtn.hidden = YES;//如果是正在等待取消的订单那就隐藏上下车按钮  吧 取消订单相关的按钮显示出来
         if (indexPath.row == timeModelArray.count -1) {
             cell.AgreedBtn.hidden = NO;
             cell.RefusedBtn.hidden = NO;
+            
         }else {
             cell.AgreedBtn.hidden = YES;
             cell.RefusedBtn.hidden = YES;
         }
-    }else {
+    }
+    else //如果不是正在等待取消的订单 那就吧上下车的按钮显示出来,吧取消订单相关的按钮隐藏掉
+    {
+        cell.timeEditorBtn.hidden = NO;
         cell.AgreedBtn.hidden = YES;
         cell.RefusedBtn.hidden = YES;
     }
@@ -315,11 +321,11 @@
     NSString *btnState;
     switch (timeModel.trainState) {
         case 0:
-            btnState = @"确认开始马术学习";
+            btnState = @"确认上马";
             cell.timeEditorBtn.backgroundColor = MColor(0, 190, 122);
             break;
         case 1:
-            btnState = @"确认结束马术学习";
+            btnState = @"确认下马";
             cell.timeEditorBtn.backgroundColor = MColor(0, 190, 122);
             break;
         case 2:
@@ -342,10 +348,29 @@
     MyOrderModel *orderModel = self.taskListArray[section];
     NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:@"TaskHeadView" owner:nil options:nil];
     TaskHeadView *headView = [nibContents lastObject];
+    headView.delegate = self;
     headView.frame = CGRectMake(0, 0, kScreen_widht, 162);
     headView.model = orderModel;
     return headView;
 }
+
+/**
+ *打电话
+ */
+- (void)handleMakePhoneCall:(NSString *)phone {
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@", phone]]];
+    
+}
+/**
+ *发短信
+ */
+- (void)handleTexting:(NSString *)phone {
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:[NSString stringWithFormat:@"sms://%@",phone]]];
+    
+    
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 145;
 }
@@ -693,6 +718,79 @@ __weak  TaskListViewController *VC = self;
         }
     }
     return taskArray;
+}
+
+- (void)versionUpdate{
+    //获得当前发布的版本
+    if(![self judgeNeedVersionUpdate])  return ;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^{
+        
+        NSString *URL_Str = [[NSString alloc] initWithFormat:@"http://itunes.apple.com/lookup?id=%@",@"1325466260"];
+        NSMutableDictionary *URL_Dic = [NSMutableDictionary dictionary];
+        __block NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+        [session POST:URL_Str parameters:URL_Dic progress:^(NSProgress * _Nonnull uploadProgress) {
+            NSLog(@"uploadProgress%@", uploadProgress);
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSLog(@"responseObject%@", responseObject);
+            NSString *resultStr = [NSString stringWithFormat:@"%@", responseObject[@"resultCount"]];
+            if ([resultStr isEqualToString:@"1"]) {
+                NSArray *array  = responseObject[@"results"];
+                if (array.count == 0) {
+                    
+                }else {
+                    dic = responseObject[@"results"][0];
+                    NSLog(@"dic%@", dic);
+                    //获得上线版本号
+                    NSString *version = [dic objectForKey:@"version"];
+                    
+                    NSString *updateInfo = [dic objectForKey:@"releaseNotes"];
+                    
+                    //获得当前版本
+                    NSString *currentVersion = [[[NSBundle mainBundle]infoDictionary]objectForKey:@"CFBundleShortVersionString"];
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        //更新界面
+                        
+                        NSLog(@"当前版本%@线上版本%@", currentVersion,version);
+                        if ( version &&![version isEqualToString:currentVersion]) {
+                            
+                            NSString *message = [NSString stringWithFormat:@"有新版本发布啦!\n%@",updateInfo];
+                            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"温馨提示"message:message delegate:self cancelButtonTitle:@"忽略"otherButtonTitles:@"前往更新",nil];
+                            
+                            [alertView show];
+                        }else{
+                            //已是最高版本
+                            NSLog(@"已经是最高版本");
+                        }
+                    });
+                }
+            }else {
+            }
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            NSLog(@"error%@", error);
+        }];
+    });
+}
+/*根据被点击按钮的索引处理点击事件--当被按钮被点击了这里做出一个反馈*/
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex ==1) {
+        NSString *url =@"https://itunes.apple.com/cn/app/骐骥马术-教练端/id1325466260?mt=8";//
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:url]];
+    }
+}
+//每天进行一次版本判断
+- (BOOL)judgeNeedVersionUpdate {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    //获取年-月-日
+    NSString *dateString = [formatter stringFromDate:[NSDate date]];
+    NSString *currentDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentDate"];
+    if ([currentDate isEqualToString:dateString]) {
+        return NO;
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:dateString forKey:@"currentDate"];
+    return YES;
 }
 
 

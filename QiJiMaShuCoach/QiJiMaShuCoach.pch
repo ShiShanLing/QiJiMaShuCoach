@@ -50,7 +50,7 @@
 #define  kOrange_Color  MColor(255, 143, 0)// 通用的橙色
 #define  kBlack_Color   MColor(51, 51, 51)// 通用的黑色
 #define kNavigation_Color MColor(255, 143, 0)//导航条通用的白色
-#define  kDark [UIColor colorWithRed:238/256.0 green:238/256.0 blue:238/256.0 alpha:1];
+#define  kDark [UIColor colorWithRed:238/256.0 green:238/256.0 blue:238/256.0 alpha:1]
 #define MFont(f) [UIFont systemFontOfSize:f]//给文字大小
 #define kIphone6Height  667.0
 #define kIphone6Width   375.0
@@ -63,11 +63,12 @@
 #define kFit(x) (SScreen_Width*((x)/kIphone6Width))
 #define MColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0f]
 //http://192.168.0.250:8080/com-zerosoft-boot-assembly-seller-local-1.0.0-SNAPSHOT/coach/api/openClass?coachId=69f5b3990b5d4c5895e444ee8a73bb05&subType=2&time=1509746400000,1509750000000,1509750000000,1509753600000
-//张玉霄
-//沈会阳  http://192.168.100.101:8080/seller
+//沈会阳  http://192.168.100.101:8080/school
 //线上      http://106.14.158.95:8081/school
 //臧鹏维  http://192.168.0.245:8080/com-zerosoft-boot-assembly-seller-local-1.0.0-SNAPSHOT
 //              http://192.168.100.101:8080/seller
+//张玉霄 http://192.168.0.241:8080/com-zerosoft-boot-assembly-seller-local-1.0.0-SNAPSHOT
+
 #define kURL_SHY @"http://106.14.158.95:8081/school"
 #define kURL_Image @"http://106.14.158.95:8081/img"
 #define kCoachId  @"f3adf20a7fa64344bec4abd50f316b20"

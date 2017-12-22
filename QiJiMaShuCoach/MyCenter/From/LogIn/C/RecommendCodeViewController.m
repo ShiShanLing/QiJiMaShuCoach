@@ -33,7 +33,6 @@
 //获取邀请列表
 - (void) getRecommendRecordList{
     
-   
 }
 
 - (void) backLogin{

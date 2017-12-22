@@ -8,7 +8,6 @@
 
 #import "HistoryTableViewCell.h"
 
-
 @implementation HistoryTableViewCell
 
 - (void)awakeFromNib {

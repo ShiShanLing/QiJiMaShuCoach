@@ -365,7 +365,7 @@
         NSLog(@"uploadProgress%@", uploadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [VC performSelector:@selector(delayMethod)];
-        //    NSLog(@"responseObject%@", responseObject);
+            NSLog(@"responseObject%@", responseObject);
         NSString *resultStr = [NSString stringWithFormat:@"%@", responseObject[@"result"]];
         if ([resultStr isEqualToString:@"1"]) {
             [VC makeToast:@"提交成功"];

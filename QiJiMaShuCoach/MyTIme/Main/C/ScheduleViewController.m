@@ -630,7 +630,7 @@ static  BOOL EditTime;
                 [remindButton addTarget:self action:@selector(clickCoachInfo) forControlEvents:UIControlEventTouchUpInside];
                 remindButton.titleLabel.font = [UIFont systemFontOfSize:12];
                 [remindButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
-                [remindButton setTitle:@"     还未通过教练认证，学员无法找到您，马上认证" forState:UIControlStateNormal];
+                [remindButton setTitle:@"    " forState:UIControlStateNormal];
                 [remindButton setTitleColor:MColor(252, 89, 0) forState:UIControlStateNormal];
                 [signView addSubview:remindButton];
                 [self.dateView addSubview:signView];
@@ -650,14 +650,12 @@ static  BOOL EditTime;
             //不显示第一行的section
             return 0;
         }
-        NSDictionary * coachInfo = [CommonUtil getObjectFromUD:@"userInfo"];
-        NSString *state = [coachInfo[@"state"] description];
+        NSString *state = [UserDataSingleton mainSingleton].approvalState;
         if (![state isEqualToString:@"2"]) {
             return 16+32;
         }else{
             return 16;
         }
-        
     }
     return 0;
 }
@@ -667,21 +665,19 @@ static  BOOL EditTime;
     //    view.backgroundColor = [UIColor blackColor];
     self.openBtn.frame = CGRectMake(0, 0, SCREEN_WIDTH, 16);
     [view addSubview:self.openBtn];
-    NSDictionary * coachInfo = [CommonUtil getObjectFromUD:@"userInfo"];
-    NSString *state = [coachInfo[@"state"] description];
-    if (![state isEqualToString:@"2"]) {
+    
+    int  state = [UserDataSingleton mainSingleton].approvalState.intValue;
+   
         UIView *signView = [[UIView alloc]initWithFrame:CGRectMake(0, 16, SCREEN_WIDTH, 32)];
         signView.backgroundColor = MColor(249, 239, 210);
         UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 20, 11, 6, 9)];
         imageView.image = [UIImage imageNamed:@"ic_arrowForSchedule"];
         [signView addSubview:imageView];
+     if (state != 2) {
         UIButton *remindButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, signView.width, signView.height)];
         [remindButton addTarget:self action:@selector(clickCoachInfo) forControlEvents:UIControlEventTouchUpInside];
         remindButton.titleLabel.font = [UIFont systemFontOfSize:12];
         [remindButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
-     
-        
-        int  state = [UserDataSingleton mainSingleton].approvalState.intValue;
             switch (state) {
                 case 0:
                     [remindButton setTitle:@"    还为申请成为教练!" forState:UIControlStateNormal];

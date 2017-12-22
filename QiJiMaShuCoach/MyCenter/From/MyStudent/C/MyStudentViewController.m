@@ -72,7 +72,7 @@
     
     if(isRefresh){
         [self.pullToRefresh tableViewReloadStart:[NSDate date] Animated:YES];
-        [self.studentTableView setContentOffset:CGPointMake(0, -60) animated:YES];
+        [self.studentTableView setContentOffset:CGPointMake(0, 0) animated:YES];
         [self pullToRefreshTriggered:self.pullToRefresh];
     }
 }
@@ -107,13 +107,13 @@
     MyStudentListModel *model = self.studentList[indexPath.row];
     NSString *avatar = @"";
     NSString *coachstate = [NSString stringWithFormat:@"%d", model.state];
-    NSString *learnmytime = @"23";
-    NSString *learntime = @"30";
-    NSString *money = @"5299";
+    NSString *learnmytime = @"0";
+    NSString *learntime = @"0";
+    NSString *money = @"";
     NSString *realname = model.realName;
     NSString *studentid = @"0";
     NSString *phone = model.phone;
-    NSString *student_cardnum = @"11";
+    NSString *student_cardnum = @"123456789";
     //头像
     NSString *logo = [CommonUtil isEmpty:avatar]?model.avatarUrl:avatar;
     if ([coachstate intValue] == 1) {
@@ -327,6 +327,7 @@
 - (void)complaintClick:(DSButton *)sender {
     if(![CommonUtil isEmpty:sender.phone] && ![@"暂无" isEqualToString:sender.phone]){
         [[UIApplication sharedApplication]openURL:[NSURL URLWithString:[NSString stringWithFormat:@"sms://%@",sender.phone]]];
+        
     }else{
         [self makeToast:@"该学员还未设置电话号码"];
     }

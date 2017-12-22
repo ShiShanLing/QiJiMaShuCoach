@@ -20,14 +20,15 @@
     NSInteger currentPage; //当前页数
     NSInteger currentIndexPage; //检索页数
 }
-
+//currentIndexPage UIButton
 @property (strong, nonatomic) DSPullToRefreshManager *pullToRefresh;    // 下拉刷新
 @property (strong, nonatomic) DSBottomPullToMoreManager *pullToMore;    // 上拉加载
 @property (strong, nonatomic) IBOutlet UITableView *mainTableView;
 @property (strong, nonatomic) IBOutlet UIView *officialView;
 @property (strong, nonatomic) IBOutlet UILabel *officialLabel;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *officialHeight;
-
+//gongsideyuangongquandouanzhishangshanlezhetongtianluyehsigeerzhiyaoquanxingganyaogounajiuaizhelonghushangshangbatamenyiwangdajin
+//图画里龙不吟虎不啸小小书生可笑可笑  棋盘里车无轮马无缰叫声将军堤防堤防
 @property (copy, nonatomic) UIImage *bgbImage;     // 显示背景图片
 @property (copy, nonatomic) NSString *testMessage; // 显示内容
 @property (copy, nonatomic) NSString *ttime;       // 显示时间
@@ -106,22 +107,17 @@
     UILongPressGestureRecognizer * longPressGr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressToDo:)];
     longPressGr.minimumPressDuration = 1.0;
     [cell addGestureRecognizer:longPressGr];
-    
-
     if (indexPath.row == (dataArr.count -1)) {
         [_pullToMore tableViewReloadFinished];
     }
-
     return cell;
 }
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 73 + [contentArr[indexPath.row] floatValue];
 }
 
--(void)longPressToDo:(UILongPressGestureRecognizer *)gesture
-{
+-(void)longPressToDo:(UILongPressGestureRecognizer *)gesture {
       if (gesture.state == UIGestureRecognizerStateBegan) {
        //if (gesture.state == UIGestureRecognizerStateEnded) {
            NSLog(@"1-------");
@@ -136,8 +132,7 @@
 }
 
 // 监听弹话框点击事件
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if(buttonIndex == 1) {
         NSDictionary *dict = [dataArr objectAtIndex:currentCell];
         NSString *noticeid = [dict objectForKey:@"noticeid"];

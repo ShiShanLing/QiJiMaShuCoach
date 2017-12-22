@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -79,7 +79,7 @@
                 <constraint firstItem="eGB-6d-8QK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FnA-8B-IBR"/>
                 <constraint firstAttribute="trailing" secondItem="eGB-6d-8QK" secondAttribute="trailing" id="pMe-5o-mVJ"/>
             </constraints>
-            <point key="canvasLocation" x="-440.5" y="1185.5"/>
+            <point key="canvasLocation" x="-428" y="2109"/>
         </view>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="JIm-I9-nDo" userLabel="zige">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -663,7 +663,7 @@
                                 <constraint firstAttribute="width" constant="137" id="obN-M5-zTp"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <state key="normal" title="学车地址设置">
+                            <state key="normal" title="马场地址设置">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -766,11 +766,11 @@
             </connections>
         </tapGestureRecognizer>
         <view contentMode="scaleToFill" id="Sb9-hY-Sxk" userLabel="有数据的view">
-            <rect key="frame" x="0.0" y="0.0" width="651" height="742"/>
+            <rect key="frame" x="0.0" y="0.0" width="651" height="872"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1E6-07-i9j">
-                    <rect key="frame" x="0.0" y="180" width="651" height="542"/>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1E6-07-i9j">
+                    <rect key="frame" x="0.0" y="180" width="651" height="692"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crI-Mn-xeX" userLabel="tools">
                             <rect key="frame" x="0.0" y="124" width="651" height="354"/>
@@ -914,7 +914,7 @@
                                         </mask>
                                     </variation>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4p7-cG-chd" userLabel="发放学车券">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4p7-cG-chd" userLabel="查看优惠券">
                                     <rect key="frame" x="300" y="0.0" width="300" height="117"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="优惠券" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Qe-LP-99a">
@@ -1386,7 +1386,7 @@
                                         </mask>
                                     </variation>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNg-PE-G4I" userLabel="学车客服">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNg-PE-G4I" userLabel="骐骥马术客服">
                                     <rect key="frame" x="300" y="237" width="300" height="117"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="骐骥马术服务" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPK-UU-0zj">
@@ -2249,11 +2249,11 @@
                         </mask>
                     </variation>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZWF-Xo-Ua0" userLabel="top">
-                    <rect key="frame" x="0.0" y="0.0" width="651" height="180"/>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZWF-Xo-Ua0" userLabel="top">
+                    <rect key="frame" x="0.0" y="-22" width="651" height="202"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="im_bg" translatesAutoresizingMaskIntoConstraints="NO" id="uhw-1x-06Z">
-                            <rect key="frame" x="0.0" y="0.0" width="651" height="180"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="im_bg" translatesAutoresizingMaskIntoConstraints="NO" id="uhw-1x-06Z">
+                            <rect key="frame" x="0.0" y="0.0" width="651" height="202"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="180" id="fzG-AS-zRZ"/>
                             </constraints>
@@ -2604,7 +2604,7 @@
                 <constraint firstItem="ZWF-Xo-Ua0" firstAttribute="top" secondItem="Sb9-hY-Sxk" secondAttribute="top" id="vq8-0y-cRG"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-309.5" y="392"/>
+            <point key="canvasLocation" x="-309.5" y="457"/>
         </view>
         <view contentMode="scaleToFill" id="cq4-9k-0Rw" userLabel="规则">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -2726,7 +2726,7 @@
                                 </mask>
                             </variation>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学车完成后需双方互相评价，优惠券/积分才会结算到您的账户；" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9e-Ab-245">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="马术学习完成后需双方互相评价，优惠券/积分才会结算到您的账户；" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9e-Ab-245">
                             <rect key="frame" x="24" y="66" width="244" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="3GK-QF-A3n"/>
@@ -2928,7 +2928,7 @@
         <image name="icon_chongzhi" width="52" height="29"/>
         <image name="icon_pencil" width="16" height="16"/>
         <image name="icon_portrait_default" width="82" height="82"/>
-        <image name="icon_setting" width="22" height="22"/>
+        <image name="icon_setting" width="19" height="18"/>
         <image name="icon_tousu" width="37" height="33"/>
         <image name="im_bg" width="320" height="195"/>
         <image name="line_horiz_grey" width="1" height="1"/>

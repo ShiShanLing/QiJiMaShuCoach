@@ -8,8 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol TaskHeadViewDelegate <NSObject>
+
+/**
+ *打电话
+ */
+- (void)handleMakePhoneCall:(NSString *)phone;
+/**
+ *发短信
+ */
+- (void)handleTexting:(NSString *)phone;
+@end
+
+
 @interface TaskHeadView : UIView
 
 @property (nonatomic, strong)MyOrderModel *model;
-
+/**
+ *
+ */
+@property (nonatomic, weak) id<TaskHeadViewDelegate>delegate;
 @end
