@@ -186,7 +186,7 @@
         [session POST:str parameters:URLDIC progress:^(NSProgress * _Nonnull uploadProgress) {
           //  NSLog(@"uploadProgress%@", uploadProgress);
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-          //  NSLog(@"uploadProgress%@", responseObject);
+            NSLog(@"uploadProgress%@", responseObject);
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [VC showAlert:@"请求失败请重试" time:1.0];
            // NSLog(@"uploadProgress%@", error);
