@@ -25,7 +25,7 @@
 #import "CoursePriceModel+CoreDataProperties.h"
 //第三方
 #import "UIImageView+WebCache.h"
-#import <AFNetworking.h>
+#import <AFNetworking/AFNetworking.h>
 #import "MBProgressHUD.h"//第三方网络加载
 #import <MJRefresh.h>//第三方刷新类
 #import "UITableView+SDAutoTableViewCellHeight.h"
