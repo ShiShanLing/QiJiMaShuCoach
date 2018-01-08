@@ -724,8 +724,7 @@ __weak  TaskListViewController *VC = self;
     //获得当前发布的版本
     if(![self judgeNeedVersionUpdate])  return ;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^{
-        
-        NSString *URL_Str = [[NSString alloc] initWithFormat:@"http://itunes.apple.com/lookup?id=%@",@"1325466260"];
+        NSString *URL_Str = [[NSString alloc] initWithFormat:@"https://itunes.apple.com/cn/lookup?id=%@",@"1325466260"];
         NSMutableDictionary *URL_Dic = [NSMutableDictionary dictionary];
         __block NSMutableDictionary *dic = [NSMutableDictionary dictionary];
         AFHTTPSessionManager *session = [AFHTTPSessionManager manager];

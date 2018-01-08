@@ -419,7 +419,6 @@
     if(lestMoney < 0){
         lestMoney = 0;
     }
-    
     money = [NSString stringWithFormat:@"%.0f", lestMoney];
     self.alertMoneyLabel.text = [NSString stringWithFormat:@"%@元", money];
     [self.alertMoneyLabel.superview  bringSubviewToFront:self.alertMoneyLabel];
@@ -432,6 +431,7 @@
 //查看积分详情
 - (IBAction)clickForCoinDetail:(id)sender {
     [self showAlert:@"该功能暂未开通" time:0.8];
+    return;
     ConvertCoinViewController *nextController = [[ConvertCoinViewController alloc] initWithNibName:@"ConvertCoinViewController" bundle:nil];
     [self.navigationController pushViewController:nextController animated:YES];
 }
